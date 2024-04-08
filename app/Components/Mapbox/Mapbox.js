@@ -40,20 +40,22 @@ function Mapbox() {
 
   return (
     <div className="flex-1 basis-[50%] border rounded-lg">
-      <MapContainer
-        center={[activeCityCords.lat, activeCityCords.lon]}
-        zoom={13}
-        scrollWheelZoom={false}
-        className="rounded-lg m-4"
-        style={{ height: "calc(100% - 2rem)", width: "calc(100% - 2rem)" }}
-      >
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        />
+      {activeCityCords && (
+        <MapContainer
+          center={[activeCityCords.lat, activeCityCords.lon]}
+          zoom={13}
+          scrollWheelZoom={false}
+          className="rounded-lg m-4"
+          style={{ height: "400px", width: "100%" }} // Adjust height as needed
+        >
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          />
 
-        <FlyToActiveCity activeCityCords={activeCityCords} />
-      </MapContainer>
+          <FlyToActiveCity activeCityCords={activeCityCords} />
+        </MapContainer>
+      )}
     </div>
   );
 }
