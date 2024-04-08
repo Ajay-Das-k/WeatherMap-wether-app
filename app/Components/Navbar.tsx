@@ -23,9 +23,7 @@ function Navbar() {
           <Button
             className="source-code-btn flex items-center gap-2"
             onClick={() => {
-              router.push(
-                "https://ajay-das-k-portfolio-git-main-ajay-das-ks-projects.vercel.app/"
-              );
+              router.push("https://ajay-das-k-portfolio-git-main-ajay-das-ks-projects.vercel.app/");
             }}
           >
             {github} Ajay's Portfolio
